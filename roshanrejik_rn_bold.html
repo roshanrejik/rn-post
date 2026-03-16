@@ -1,0 +1,249 @@
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Cabinet+Grotesk:wght@400;500;700&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=clash-display@600,700,800&display=swap');
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+:root{
+  --bg:#f5f5f0;--card:#ffffff;--soft:#f0f0eb;
+  --cyan:#0284c7;--violet:#7c3aed;--lime:#16a34a;--amber:#d97706;--rose:#e11d48;
+  --text:#0f0f1a;--muted:#64748b;--border:#e2e2dc;
+  --display:'Clash Display',sans-serif;
+  --body:'Cabinet Grotesk',sans-serif;
+  --mono:'DM Mono',monospace;
+}
+body{background:var(--bg);font-family:var(--body);color:var(--text);min-height:100vh}
+.topbar{background:var(--card);border-bottom:1px solid var(--border);padding:11px 16px;display:flex;align-items:center;justify-content:space-between}
+.handle{font-family:var(--display);font-size:15px;font-weight:700;color:var(--cyan)}
+.handle span{color:var(--muted);font-weight:400;font-size:12px;margin-left:5px;font-family:var(--body)}
+.dotnav{display:flex;gap:5px;align-items:center}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--border);cursor:pointer;transition:all .2s}
+.dot.on{background:var(--cyan);transform:scale(1.3)}
+.slides{min-height:520px}
+.slide{display:none;padding:20px 18px 14px;animation:fIn .25s ease}
+.slide.on{display:block}
+@keyframes fIn{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+.eyebrow{display:inline-flex;align-items:center;font-size:11px;font-family:var(--mono);letter-spacing:.5px;padding:3px 10px;border-radius:20px;margin-bottom:11px;font-weight:500}
+.ec{background:#e0f2fe;color:#0369a1;border:1px solid #bae6fd}
+.ev{background:#ede9fe;color:#6d28d9;border:1px solid #ddd6fe}
+.el{background:#dcfce7;color:#15803d;border:1px solid #bbf7d0}
+.ea{background:#fef3c7;color:#b45309;border:1px solid #fde68a}
+.er{background:#ffe4e6;color:#be123c;border:1px solid #fecdd3}
+h1{font-family:var(--display);font-size:24px;font-weight:700;line-height:1.15;margin-bottom:10px;letter-spacing:-.5px;color:var(--text)}
+h3{font-size:13px;font-weight:700;margin-bottom:3px;color:var(--text);font-family:var(--body)}
+p{font-size:13px;color:var(--muted);line-height:1.6;font-family:var(--body)}
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:11px 13px;margin-bottom:8px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px}
+.pill{display:inline-block;padding:2px 8px;border-radius:20px;font-size:10px;font-family:var(--mono);font-weight:500}
+.pc{background:#e0f2fe;color:#0369a1}
+.pv{background:#ede9fe;color:#6d28d9}
+.pl{background:#dcfce7;color:#15803d}
+.pa{background:#fef3c7;color:#b45309}
+.pr{background:#ffe4e6;color:#be123c}
+.app-row{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--border)}
+.app-row:last-child{border-bottom:none}
+.ico{width:32px;height:32px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;font-family:var(--display);font-weight:700;color:#fff}
+.bw{flex:1}
+.bb{background:var(--soft);border-radius:3px;height:5px;overflow:hidden;margin-top:4px}
+.bf{height:5px;border-radius:3px}
+.row{display:flex;align-items:flex-start;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border);gap:8px}
+.row:last-child{border-bottom:none}
+.abox{background:var(--soft);border:1px solid var(--border);border-radius:7px;padding:9px 11px;text-align:center;font-family:var(--mono);font-size:11px}
+.cb{background:#1e1e2e;border:1px solid #2a2a3d;border-radius:8px;padding:11px 12px;font-family:var(--mono);font-size:11px;line-height:1.75;overflow-x:auto;margin:8px 0}
+.kw{color:#ff79c6}.fn{color:#5ee7ff}.str{color:#ffd166}.cm{color:#6272a4}.cn{color:#b4a0ff}
+.tl-item{display:flex;gap:11px;padding:8px 0;border-bottom:1px solid var(--border)}
+.tl-item:last-child{border-bottom:none}
+.tl-dot{width:28px;height:28px;border-radius:50%;border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:9px;font-weight:500;flex-shrink:0;margin-top:2px;background:var(--card)}
+.footer{border-top:1px solid var(--border);margin-top:14px;padding-top:10px;display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--muted);font-family:var(--mono)}
+.hire-cta{border:1.5px solid #bae6fd;border-radius:12px;padding:16px;text-align:center;margin-top:12px;background:#f0f9ff}
+.comp-label{font-size:10px;font-family:var(--mono);color:var(--muted);padding-bottom:6px;border-bottom:1px solid var(--border);display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px;margin-bottom:4px}
+.comp-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px;padding:5px 0;border-bottom:1px solid var(--border);font-size:11px;align-items:center;font-family:var(--body)}
+.comp-row:last-child{border-bottom:none}
+.win{color:#15803d;font-weight:700}.lose{color:#be123c}.warn{color:#b45309}
+.ctrl{display:flex;justify-content:space-between;align-items:center;padding:11px 16px;border-top:1px solid var(--border);background:var(--card)}
+.btn{padding:7px 16px;border-radius:7px;border:1px solid var(--border);background:var(--soft);color:var(--text);cursor:pointer;font-size:12px;font-weight:700;transition:all .18s;font-family:var(--display)}
+.btn:hover{background:var(--border)}
+.btn-c{background:#e0f2fe;border-color:#bae6fd;color:#0369a1}
+.btn-c:hover{background:#bae6fd}
+.ctr{font-size:11px;color:var(--muted);font-family:var(--mono)}
+</style>
+
+<div class="topbar">
+  <span class="handle">@roshanrejik <span>· React Native Engineer</span></span>
+  <div class="dotnav" id="dotnav"></div>
+</div>
+<div class="slides" id="slides"></div>
+<div class="ctrl">
+  <button class="btn" onclick="go(-1)">← prev</button>
+  <span class="ctr" id="ctr">1 / 9</span>
+  <button class="btn btn-c" onclick="go(1)">next →</button>
+</div>
+
+<script>
+const S=[
+{h:`<div class="eyebrow ec">React Native · 2025–2026</div>
+<h1>They called RN a toy.<br><span style="color:var(--cyan)">1.5 billion users</span><br>changed the narrative.</h1>
+<p style="margin-bottom:12px">Still sleeping on React Native? These companies didn't.</p>
+<div class="card" style="padding:8px 12px">
+<div class="app-row"><div class="ico" style="background:#1877f2">f</div><div class="bw"><div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:12px;font-weight:700;font-family:var(--body)">Facebook</span><span class="pill pc">OG builder</span></div><div class="bb"><div class="bf" style="width:97%;background:#0284c7"></div></div></div></div>
+<div class="app-row"><div class="ico" style="background:#e1306c">Ig</div><div class="bw"><div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:12px;font-weight:700;font-family:var(--body)">Instagram</span><span class="pill pv">2B MAU</span></div><div class="bb"><div class="bf" style="width:91%;background:#7c3aed"></div></div></div></div>
+<div class="app-row"><div class="ico" style="background:#96bf48">Sh</div><div class="bw"><div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:12px;font-weight:700;font-family:var(--body)">Shopify</span><span class="pill pl">$7B GMV</span></div><div class="bb"><div class="bf" style="width:85%;background:#16a34a"></div></div></div></div>
+<div class="app-row"><div class="ico" style="background:#5865f2">Di</div><div class="bw"><div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:12px;font-weight:700;font-family:var(--body)">Discord</span><span class="pill pa">500M users</span></div><div class="bb"><div class="bf" style="width:80%;background:#d97706"></div></div></div></div>
+<div class="app-row"><div class="ico" style="background:#0052ff">Cb</div><div class="bw"><div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:12px;font-weight:700;font-family:var(--body)">Coinbase</span><span class="pill pr">$100B trades</span></div><div class="bb"><div class="bf" style="width:74%;background:#e11d48"></div></div></div></div>
+</div>
+<div class="footer"><span>#ReactNative #MobileDev2025</span><span style="color:var(--cyan)">@roshanrejik</span></div>`},
+
+{h:`<div class="eyebrow ev">New Architecture · 2025</div>
+<h1>RN is slow?<br><span style="color:var(--violet)">Wrong decade.</span><br>Wrong take.</h1>
+<p style="margin-bottom:12px">The New Architecture is fully shipped. Here's what changed:</p>
+<div class="g2">
+<div class="card"><div class="pill pc" style="margin-bottom:6px">JSI</div><h3>Direct C++ bridge</h3><p>Zero serialization. Sync JS-to-native. No async JSON queue.</p></div>
+<div class="card"><div class="pill pv" style="margin-bottom:6px">Fabric</div><h3>New renderer</h3><p>Concurrent mode. Suspense. Faster layout with Yoga v3.</p></div>
+<div class="card"><div class="pill pl" style="margin-bottom:6px">TurboModules</div><h3>Lazy native</h3><p>Modules load on demand. Startup cut by 40%.</p></div>
+<div class="card"><div class="pill pa" style="margin-bottom:6px">Hermes</div><h3>Mobile JS engine</h3><p>Bytecode pre-compile. TTI under 300ms on mid-range Android.</p></div>
+</div>
+<div class="card" style="display:flex;align-items:center;gap:12px;background:#f0fdf4;border-color:#bbf7d0">
+<span style="font-family:var(--display);font-size:28px;font-weight:700;color:#15803d">60fps</span>
+<span style="font-size:12px;color:var(--muted)">Consistent on mid-range Android. Not a demo — this is production.</span>
+</div>
+<div class="footer"><span>#NewArchitecture #RNPerf2025</span><span style="color:var(--cyan)">@roshanrejik</span></div>`},
+
+{h:`<div class="eyebrow ec">Architecture · deep dive</div>
+<h1>How RN <span style="color:var(--cyan)">actually works</span><br>under the hood</h1>
+<p style="margin-bottom:11px">Most devs use it. Few understand the full stack.</p>
+<div class="abox" style="border-color:#bae6fd;background:#f0f9ff"><span style="color:#0369a1;font-weight:700;font-family:var(--display)">JavaScript thread</span><br><span style="color:var(--muted);font-size:10px">React logic · state · business rules · Hermes</span></div>
+<div style="text-align:center;color:var(--muted);padding:4px 0;font-size:11px;font-family:var(--mono)">↕ JSI — synchronous C++ interface</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:7px">
+<div class="abox" style="border-color:#ddd6fe;background:#faf5ff"><span style="color:#6d28d9;font-weight:700;font-family:var(--display)">Fabric renderer</span><br><span style="color:var(--muted);font-size:10px">Shadow tree · Yoga layout</span></div>
+<div class="abox" style="border-color:#fde68a;background:#fffbeb"><span style="color:#b45309;font-weight:700;font-family:var(--display)">TurboModules</span><br><span style="color:var(--muted);font-size:10px">Camera · GPS · BLE · NFC</span></div>
+</div>
+<div style="text-align:center;color:var(--muted);padding:4px 0;font-size:11px;font-family:var(--mono)">↕ native thread</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:7px">
+<div class="abox" style="border-color:#bbf7d0;background:#f0fdf4"><span style="color:#15803d;font-weight:700;font-family:var(--display)">iOS UIKit</span><br><span style="color:var(--muted);font-size:10px">Real native views</span></div>
+<div class="abox" style="border-color:#fecdd3;background:#fff1f2"><span style="color:#be123c;font-weight:700;font-family:var(--display)">Android View</span><br><span style="color:var(--muted);font-size:10px">Real native views</span></div>
+</div>
+<div class="card" style="margin-top:8px;background:#f0f9ff;border-color:#bae6fd;padding:9px 12px">
+<span style="font-size:12px;color:var(--muted)">Key insight: JSI replaced the async bridge. JS now talks to C++ synchronously. That's the 2025 difference.</span>
+</div>
+<div class="footer"><span>#JSI #Fabric #TurboModules</span><span style="color:var(--cyan)">@roshanrejik</span></div>`},
+
+{h:`<div class="eyebrow er">Secret sauce · prod tips</div>
+<h1>7 RN tricks <span style="color:var(--rose)">senior engineers</span><br>use in production</h1>
+<div style="margin-top:10px">
+<div class="row"><div style="flex:1"><span style="font-size:12px;font-weight:700;color:#0369a1;font-family:var(--display)">useNativeDriver: true</span><br><span style="font-size:11px;color:var(--muted)">Moves animations entirely off the JS thread</span></div><span class="pill pc" style="flex-shrink:0;margin-top:2px">perf</span></div>
+<div class="row"><div style="flex:1"><span style="font-size:12px;font-weight:700;color:#6d28d9;font-family:var(--display)">FlashList over FlatList</span><br><span style="font-size:11px;color:var(--muted)">Shopify's drop-in. 10x faster for long lists.</span></div><span class="pill pv" style="flex-shrink:0;margin-top:2px">lists</span></div>
+<div class="row"><div style="flex:1"><span style="font-size:12px;font-weight:700;color:#15803d;font-family:var(--display)">Reanimated 3 worklets</span><br><span style="font-size:11px;color:var(--muted)">Animation logic on UI thread. Zero bridge overhead.</span></div><span class="pill pl" style="flex-shrink:0;margin-top:2px">anim</span></div>
+<div class="row"><div style="flex:1"><span style="font-size:12px;font-weight:700;color:#b45309;font-family:var(--display)">Metro RAM bundles</span><br><span style="font-size:11px;color:var(--muted)">Load only startup modules. Cut TTI in half.</span></div><span class="pill pa" style="flex-shrink:0;margin-top:2px">startup</span></div>
+<div class="row"><div style="flex:1"><span style="font-size:12px;font-weight:700;color:#be123c;font-family:var(--display)">Codegen static typing</span><br><span style="font-size:11px;color:var(--muted)">Auto-generates native glue from TypeScript specs.</span></div><span class="pill pr" style="flex-shrink:0;margin-top:2px">dx</span></div>
+<div class="row"><div style="flex:1"><span style="font-size:12px;font-weight:700;color:#0369a1;font-family:var(--display)">MMKV over AsyncStorage</span><br><span style="font-size:11px;color:var(--muted)">10x faster. C++ backed. Used by WhatsApp.</span></div><span class="pill pc" style="flex-shrink:0;margin-top:2px">storage</span></div>
+<div class="row"><div style="flex:1"><span style="font-size:12px;font-weight:700;color:#6d28d9;font-family:var(--display)">InteractionManager</span><br><span style="font-size:11px;color:var(--muted)">Defer heavy work until animations complete.</span></div><span class="pill pv" style="flex-shrink:0;margin-top:2px">ux</span></div>
+</div>
+<div class="footer"><span>#RNTips #ReactNative2025</span><span style="color:var(--cyan)">@roshanrejik</span></div>`},
+
+{h:`<div class="eyebrow el">Comparison · honest take</div>
+<h1>RN vs Flutter 2025 —<br><span style="color:var(--lime)">the numbers speak</span></h1>
+<p style="margin-bottom:11px">Not a fanboy. Just a dev who's shipped both.</p>
+<div class="card" style="padding:8px 12px">
+<div class="comp-label"><span>Feature</span><span style="color:#0369a1">React Native</span><span style="color:#0088cc">Flutter</span></div>
+<div class="comp-row"><span style="color:var(--muted)">Dev ramp-up</span><span class="win">React — day 1</span><span class="lose">Dart — weeks</span></div>
+<div class="comp-row"><span style="color:var(--muted)">Native UI</span><span class="win">True native</span><span class="warn">Canvas render</span></div>
+<div class="comp-row"><span style="color:var(--muted)">OTA updates</span><span class="win">CodePush/Expo</span><span class="lose">Not supported</span></div>
+<div class="comp-row"><span style="color:var(--muted)">Web sharing</span><span class="win">RN Web + Expo</span><span class="warn">Limited</span></div>
+<div class="comp-row"><span style="color:var(--muted)">Big tech</span><span class="win">Meta·MS·Shopify</span><span class="warn">Google only</span></div>
+<div class="comp-row"><span style="color:var(--muted)">Packages</span><span class="win">npm 2M+</span><span class="lose">pub.dev limited</span></div>
+</div>
+<div class="card" style="background:#f0fdf4;border-color:#bbf7d0;padding:9px 12px">
+<span style="font-size:12px;color:#15803d;font-weight:700;font-family:var(--display)">Bottom line: React dev? RN gives you iOS + Android + Web. Flutter can't say that.</span>
+</div>
+<div class="footer"><span>#RNvsFlutter #CrossPlatform2025</span><span style="color:var(--cyan)">@roshanrejik</span></div>`},
+
+{h:`<div class="eyebrow ec">Code speaks · 2025</div>
+<h1>One codebase.<br><span style="color:var(--cyan)">Five platforms.</span><br>Zero compromise.</h1>
+<p style="margin-bottom:6px">This single component ships to iOS, Android, Web, macOS and Windows:</p>
+<div class="cb">
+<span class="kw">import</span> { <span class="cn">Pressable</span> } <span class="kw">from</span> <span class="str">'react-native'</span><br>
+<span class="kw">import</span> { <span class="fn">useSharedValue</span>, <span class="fn">withSpring</span>,<br>
+&nbsp;&nbsp;<span class="fn">useAnimatedStyle</span> } <span class="kw">from</span> <span class="str">'react-native-reanimated'</span><br><br>
+<span class="cm">// UI thread — zero bridge overhead</span><br>
+<span class="kw">const</span> scale = <span class="fn">useSharedValue</span>(<span class="str">1</span>)<br>
+<span class="kw">const</span> aStyle = <span class="fn">useAnimatedStyle</span>(() => ({<br>
+&nbsp;&nbsp;transform: [{ scale: <span class="fn">withSpring</span>(scale.value) }]<br>
+}))<br><br>
+<span class="kw">return</span> (<br>
+&nbsp;&nbsp;&lt;<span class="cn">Animated.View</span> style={aStyle}&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="cn">Pressable</span> onPressIn={() =&gt; scale.value=<span class="str">0.95</span>}&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="cn">Text</span>&gt;{label}&lt;/<span class="cn">Text</span>&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<span class="cn">Pressable</span>&gt;<br>
+&nbsp;&nbsp;&lt;/<span class="cn">Animated.View</span>&gt;<br>
+)
+</div>
+<div style="display:flex;gap:6px;flex-wrap:wrap">
+<span class="pill pc">iOS</span><span class="pill pv">Android</span><span class="pill pl">Web</span><span class="pill pa">macOS</span><span class="pill pr">Windows</span>
+</div>
+<div class="footer"><span>#Reanimated3 #ExpoSDK52</span><span style="color:var(--cyan)">@roshanrejik</span></div>`},
+
+{h:`<div class="eyebrow ea">Expo · the cheat code</div>
+<h1><span style="color:var(--amber)">Expo SDK 52</span> in 2025<br>changed how we ship.</h1>
+<p style="margin-bottom:12px">Stop fighting Xcode. Start shipping real products.</p>
+<div class="g2">
+<div class="card"><h3 style="color:var(--amber)">OTA updates</h3><p>Push JS without App Store review. Minutes, not days.</p></div>
+<div class="card"><h3 style="color:var(--cyan)">EAS Build</h3><p>Build iOS on Linux. No Mac needed. CI/CD in 3 clicks.</p></div>
+<div class="card"><h3 style="color:var(--violet)">Expo Router v3</h3><p>Next.js-style routing. Typed routes. Universal links.</p></div>
+<div class="card"><h3 style="color:var(--lime)">50+ native APIs</h3><p>Camera, biometrics, sensors — all pre-wired.</p></div>
+</div>
+<div class="card" style="background:#fffbeb;border-color:#fde68a;padding:9px 12px">
+<span style="font-family:var(--mono);font-size:12px;color:#b45309">$ npx create-expo-app@latest my-app</span><br>
+<span style="font-size:11px;color:var(--muted);margin-top:4px;display:block">Full nav + typed routes + working app in 30 seconds.</span>
+</div>
+<div class="footer"><span>#Expo #EASBuild #ExpoRouter</span><span style="color:var(--cyan)">@roshanrejik</span></div>`},
+
+{h:`<div class="eyebrow ev">2026 roadmap</div>
+<h1>Where React Native<br><span style="color:var(--violet)">is heading</span> in 2026</h1>
+<p style="margin-bottom:11px">The roadmap is playing out in real time.</p>
+<div class="tl-item"><div class="tl-dot" style="border-color:#bae6fd;color:#0369a1">NOW</div><div><h3 style="color:#0369a1">RN for Windows + macOS</h3><p style="font-size:12px">Microsoft ships it in Office. One codebase, 5 platforms.</p></div></div>
+<div class="tl-item"><div class="tl-dot" style="border-color:#bbf7d0;color:#15803d">Q2</div><div><h3 style="color:#15803d">Static Hermes</h3><p style="font-size:12px">Compile-time optimizations. JS rivaling native C++ benchmarks.</p></div></div>
+<div class="tl-item"><div class="tl-dot" style="border-color:#ddd6fe;color:#6d28d9">Q3</div><div><h3 style="color:#6d28d9">React Server Components on mobile</h3><p style="font-size:12px">Expo is shipping it. Zero bundle overhead for data-heavy screens.</p></div></div>
+<div class="tl-item"><div class="tl-dot" style="border-color:#fde68a;color:#b45309">2026</div><div><h3 style="color:#b45309">RN for XR / Vision Pro</h3><p style="font-size:12px">Spatial computing, same component model. React devs enter AR/VR first.</p></div></div>
+<div class="tl-item"><div class="tl-dot" style="border-color:#fecdd3;color:#be123c">2026</div><div><h3 style="color:#be123c">AI-native mobile</h3><p style="font-size:12px">On-device Llama + Whisper via RN modules. Edge AI, zero latency.</p></div></div>
+<div class="footer"><span>#RN2026 #FutureOfMobile</span><span style="color:var(--cyan)">@roshanrejik</span></div>`},
+
+{h:`<div class="eyebrow er">hire me · open to work</div>
+<h1>You need a million-user app.<br><span style="color:var(--rose)">I architect</span> the systems<br>that run them.</h1>
+<div style="margin-top:10px">
+<div class="row"><span style="font-size:12px;font-weight:700;font-family:var(--display)">New Architecture (JSI + Fabric)</span><span class="pill pc">Expert</span></div>
+<div class="row"><span style="font-size:12px;font-weight:700;font-family:var(--display)">Expo EAS + CI/CD pipelines</span><span class="pill pl">Expert</span></div>
+<div class="row"><span style="font-size:12px;font-weight:700;font-family:var(--display)">Reanimated 3 + Gesture Handler</span><span class="pill pv">Expert</span></div>
+<div class="row"><span style="font-size:12px;font-weight:700;font-family:var(--display)">TypeScript + Codegen</span><span class="pill pa">Expert</span></div>
+<div class="row"><span style="font-size:12px;font-weight:700;font-family:var(--display)">Performance profiling + optimization</span><span class="pill pr">Expert</span></div>
+<div class="row"><span style="font-size:12px;font-weight:700;font-family:var(--display)">Firebase · Supabase · GraphQL · REST</span><span class="pill pc">Expert</span></div>
+</div>
+<div class="hire-cta">
+<p style="font-size:12px;color:var(--muted);margin-bottom:6px">Building the next big consumer app in 2025–2026?</p>
+<p style="font-family:var(--display);font-size:19px;font-weight:700;color:#0369a1">DM @roshanrejik — let's build.</p>
+<p style="font-size:11px;color:var(--muted);margin-top:5px">I don't just write code. I architect mobile products that scale.</p>
+</div>
+<div class="footer"><span>#HireMe #ReactNativeDev #OpenToWork</span><span style="color:var(--cyan)">@roshanrejik</span></div>`}
+];
+
+let cur=0;
+const nav=document.getElementById('dotnav');
+const sl=document.getElementById('slides');
+S.forEach((s,i)=>{
+  const d=document.createElement('div');
+  d.className='dot'+(i===0?' on':'');
+  d.onclick=()=>go2(i);
+  nav.appendChild(d);
+  const el=document.createElement('div');
+  el.className='slide'+(i===0?' on':'');
+  el.innerHTML=s.h;
+  sl.appendChild(el);
+});
+function go2(n){
+  document.querySelectorAll('.slide')[cur].classList.remove('on');
+  document.querySelectorAll('.dot')[cur].classList.remove('on');
+  cur=(n+S.length)%S.length;
+  document.querySelectorAll('.slide')[cur].classList.add('on');
+  document.querySelectorAll('.dot')[cur].classList.add('on');
+  document.getElementById('ctr').textContent=(cur+1)+' / '+S.length;
+}
+function go(d){go2(cur+d);}
+</script>
